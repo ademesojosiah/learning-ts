@@ -1,8 +1,45 @@
-let pageNumber:string = '1'
-let NumericPageNumber:number = (pageNumber as unknown ) as number
+// let pageNumber:string = '1'
+// let NumericPageNumber:number = (pageNumber as unknown ) as number
 
 
+//classes in typescript
 
+class User {
+    firstname: string
+    lastname : string
+
+    constructor(firstname:string, lastname:string){
+        this.firstname = firstname
+        this.lastname = lastname
+    }
+
+
+    getFullname():string {
+        return this.firstname + '' + this.lastname
+    }
+}
+
+
+const user = new User('master','lessons')
+
+console.log(user.getFullname())
+
+class Admin extends User{
+ private editor:string
+
+
+ setEditor(editor:string):void{
+    this.editor = editor
+ }
+
+ getEditor():string{
+    return this.editor
+ }
+
+}
+
+let admin = new Admin('master','lessons')
+console.log(admin.getEditor());
 
 
 
@@ -29,5 +66,5 @@ let NumericPageNumber:number = (pageNumber as unknown ) as number
 //     class:['jojo','ade']
 // }
 
-// let prices:ID[] = [4,5,6,7]
+// let pric es:ID[] = [4,5,6,7]
 // let myNumber:maybeNumber = 80
